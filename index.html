@@ -1,0 +1,162 @@
+<!DOCTYPE html>
+<html lang="es">
+<head>
+<meta charset="UTF-8">
+<meta name="viewport" content="width=device-width, initial-scale=1.0">
+<title>Kitty Hair Color — Tinturas Fantasía</title>
+<meta name="description" content="Kitty Hair Color — tinturas fantasía. Descubre tu tono ideal en nuestra carta de colores.">
+<link rel="preload" as="image" href="assets/brand/logo.png">
+<link rel="icon" type="image/png" href="favicon.png">
+<link rel="apple-touch-icon" href="favicon.png">
+<link rel="stylesheet" href="styles/main.css">
+</head>
+<body>
+
+<!-- ============================================================
+     SECCION 1/4 : HERO
+     ============================================================ -->
+<header class="hero" id="inicio">
+
+  <!-- Corazones decorativos flotantes (material real recortado) -->
+  <div class="hero__flotantes" aria-hidden="true">
+    <img src="assets/productos/fucsia.png"       alt="" class="flot f1">
+    <img src="assets/productos/turquesa.png"     alt="" class="flot f2">
+    <img src="assets/productos/amarillo-neon.png" alt="" class="flot f3">
+    <img src="assets/productos/lavanda.png"      alt="" class="flot f4">
+    <img src="assets/productos/salmon.png"       alt="" class="flot f5">
+    <img src="assets/productos/morado.png"       alt="" class="flot f6">
+  </div>
+
+  <div class="hero__contenido">
+    <img src="assets/brand/logo.png" alt="Kitty Hair Color" class="hero__logo">
+
+    <p class="hero__tagline">Tinturas fantasía</p>
+
+    <h1 class="hero__titulo">
+      Encuentra tu <span class="acento">tono perfecto</span>
+    </h1>
+
+    <p class="hero__texto">
+      Veinte tonos vibrantes, de los pasteles más suaves a los neones más atrevidos.
+      Recorre nuestra carta de colores y descubre el que es tuyo.
+    </p>
+
+    <div class="hero__acciones">
+      <a href="#catalogo" class="btn btn--primario">Ver la carta de colores</a>
+      <a href="#como-comprar" class="btn btn--fantasma">Cómo comprar</a>
+    </div>
+  </div>
+
+</header>
+
+<main>
+  <!-- ============================================================
+       SECCION 2/4 : CATALOGO
+       La grilla se construye sola desde data/productos.js
+       ============================================================ -->
+  <section class="catalogo" id="catalogo">
+
+    <div class="catalogo__cabecera">
+      <p class="seccion__etiqueta">Nuestra paleta</p>
+      <h2 class="seccion__titulo">Carta de colores</h2>
+      <p class="seccion__bajada">
+        Filtra por familia y encuentra el tono que va contigo.
+      </p>
+    </div>
+
+    <!-- Filtros por familia (se generan desde FAMILIAS) -->
+    <div class="filtros" id="filtros" role="group" aria-label="Filtrar por familia de color"></div>
+
+    <!-- Grilla de productos (se construye desde PRODUCTOS) -->
+    <div class="grilla" id="grilla"></div>
+
+    <!-- Estado vacio: se ve bien aunque no haya productos cargados -->
+    <div class="vacio" id="catalogo-vacio" hidden>
+      <img src="assets/brand/logo.png" alt="" class="vacio__logo">
+      <p class="vacio__titulo">Estamos cargando los tonos</p>
+      <p class="vacio__texto">
+        En breve vas a poder ver acá los veinte colores de Kitty Hair Color.
+      </p>
+    </div>
+
+  </section>
+
+  <!-- ============================================================
+       CÓMO COMPRAR
+       ============================================================ -->
+  <section class="como" id="como-comprar">
+    <div class="como__cabecera">
+      <p class="seccion__etiqueta">Así de simple</p>
+      <h2 class="seccion__titulo">Cómo comprar</h2>
+      <p class="seccion__bajada">Cuatro pasos y listo.</p>
+    </div>
+
+    <ol class="pasos" id="pasos-compra"></ol>
+  </section>
+
+  <!-- ============================================================
+       ENVÍOS Y ENTREGAS
+       ============================================================ -->
+  <section class="envios" id="envios">
+    <div class="envios__cabecera">
+      <p class="seccion__etiqueta">Llegamos a todo Chile</p>
+      <h2 class="seccion__titulo">Envíos y entregas</h2>
+    </div>
+
+    <div class="envios__columnas">
+      <div class="envios__bloque">
+        <h3 class="envios__titulo">Opciones de envío</h3>
+        <ul class="envios__lista" id="lista-envios"></ul>
+      </div>
+      <div class="envios__bloque">
+        <h3 class="envios__titulo">Entregas presenciales</h3>
+        <ul class="envios__lista" id="lista-entregas"></ul>
+      </div>
+    </div>
+
+    <p class="envios__nota">
+      Después de comprar te compartimos todos los detalles de tu envío.
+    </p>
+  </section>
+
+  <!-- ============================================================
+       CONTACTO
+       ============================================================ -->
+  <section class="contacto" id="contacto">
+    <div class="contacto__caja">
+      <p class="seccion__etiqueta">Escríbenos</p>
+      <h2 class="seccion__titulo">¿Consultas por un tono?</h2>
+      <p class="contacto__texto">
+        Respondemos siempre y con gusto. Escríbenos al DM y te ayudamos a elegir.
+      </p>
+
+      <!-- Botón de contacto Instagram (se construye desde TIENDA.instagram) -->
+      <div id="boton-contacto"></div>
+    </div>
+  </section>
+
+  <footer class="pie">
+    <div class="pie__caja">
+      <img src="assets/brand/logo.png" alt="Kitty Hair Color" class="pie__logo">
+      <p class="pie__nombre">Kitty Hair Color</p>
+      <p class="pie__lema">Tinturas fantasía</p>
+
+      <!-- Redes (se construyen desde TIENDA) -->
+      <div class="pie__redes" id="pie-redes"></div>
+
+      <p class="pie__legal">
+        © <span id="anio"></span> Kitty Hair Color · Hecho con cariño en Chile
+      </p>
+    </div>
+  </footer>
+</main>
+
+<script src="data/productos.js"></script>
+<script src="js/render.js"></script>
+<script src="js/secciones.js"></script>
+<script>
+  /* Año del footer, sin depender de nada externo */
+  document.getElementById("anio").textContent = new Date().getFullYear();
+</script>
+</body>
+</html>

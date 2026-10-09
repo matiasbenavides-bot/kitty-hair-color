@@ -1,0 +1,17 @@
+# Archivos de verificación y respaldo (no forman parte del sitio)
+_capturas/
+*.log
+
+# Sistema
+.DS_Store
+Thumbs.db
+desktop.ini
+
+# Editores
+.vscode/
+.idea/
+*.swp
+
+# Temporales
+node_modules/
+*.tmp
